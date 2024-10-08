@@ -69,5 +69,39 @@
             <button class="button" id="no">No, I Won't</button>
         </div>
     </div>
+
+    <script>
+        let noClicks = 0;
+        const question = document.getElementById('question');
+        const noButton = document.getElementById('no');
+
+        document.getElementById('yes').addEventListener('click', () => {
+            document.body.innerHTML = '<div class="container"> <h1>Thank You So Much! 🎉 Full Marks Secured! 😁</h1></div>';
+        });
+
+        noButton.addEventListener('click', () => {
+            noClicks++;
+            if (noClicks === 1) {
+                question.textContent = 'Please reconsider, this assignment took a lot of effort. 😢😢';
+            } else if (noClicks === 2) {
+                question.textContent = 'I\'ve worked so hard, please give me full marks! 😫😫';
+            } else if (noClicks === 3) {
+                question.textContent = 'Why are you so harsh, please give me full marks! 😖😖';
+                noButton.classList.add('moving');
+                moveButtonAway(); 
+                noButton.addEventListener('mouseover', moveButtonAway);
+            }
+        });
+
+        function moveButtonAway() {
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+            const maxX = window.innerWidth - buttonWidth;
+            const maxY = window.innerHeight - buttonHeight;
+
+            noButton.style.left = Math.random() * maxX + 'px';
+            noButton.style.top = Math.random() * maxY + 'px';
+        }
+    </script>
 </body>
 </html>
