@@ -25,11 +25,11 @@ Check out the deployed version of the website here:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/repository-name.git
+   git clone https://github.com/kram-12/informal_request.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd repository-name
+   cd informal_request
    ```
 3. Open `index.html` in your browser to view the page.
 
